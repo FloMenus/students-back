@@ -15,7 +15,7 @@ app.post("/", (req, res) => {
   const idFinder = student.name;
 
   if (studentsList.find((student) => student.name === idFinder)) {
-    res.status(400).json({ message: "Student already exists" });
+    res.status(409).json({ message: "Student already exists" });
   } else {
     studentsList.push(student);
     res.json(student);
